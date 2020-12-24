@@ -32,7 +32,6 @@ class SportNews(Subject):
         print("Пользователь отписался.")
         self._observers.remove(observer)
 
-
     def notify(self) -> None:
 
         print("Отправка уведомлений...")
@@ -61,7 +60,7 @@ class FootballObserver(Observer):
             print("Футбольный болельщик получил уведомление.")
 
 
-class FootballObserver(Observer):
+class HockeyObserver(Observer):
     def update(self, subject: Subject) -> None:
         if subject._state == 'Хоккей':
             print("Хоккейный болельщик получил уведомление.")
@@ -74,7 +73,7 @@ if __name__ == "__main__":
     observer_a = FootballObserver()
     subject.follow(observer_a)
 
-    observer_b = FootballObserver()
+    observer_b = HockeyObserver()
     subject.follow(observer_b)
 
     subject.some_logic('Футбол')
@@ -82,4 +81,4 @@ if __name__ == "__main__":
 
     subject.unfollow(observer_a)
 
-    subject.some_logic('Хоккей')
+    subject.some_logic('Футбол')

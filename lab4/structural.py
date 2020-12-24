@@ -1,12 +1,17 @@
 from abc import ABC, abstractmethod
-import time, random
+import time
+import random
 
 cache = {}
+
 
 class Video(ABC):
 
     @abstractmethod
     def downloading(self) -> None:
+        pass
+
+    def real_downloading(self):
         pass
 
 
@@ -16,9 +21,12 @@ class RealVideo(Video):
 
     def downloading(self) -> None:
         print("Начало скачивания...")
-        time.sleep(3)
+        cache.update({self.name: self.real_downloading()})
         print("Скачивание завершено.")
-        cache.update({self.name:random.randrange(10000, 99999)})
+
+    def real_downloading(self):
+        time.sleep(3)
+        return random.randrange(10000, 99999)
 
 
 class Proxy(Video):
@@ -48,7 +56,7 @@ def client_code(subject: Video) -> None:
     # ...
 
 
-if __name__ == "__main__":
+def main():
     print("Без кэша...")
     print("Видео1:")
     real_subject1 = RealVideo("video1")
@@ -73,3 +81,7 @@ if __name__ == "__main__":
     print("Видео3:")
     proxy = Proxy(real_subject3)
     client_code(proxy)
+
+
+if __name__ == "__main__":
+    main()

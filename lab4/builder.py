@@ -63,6 +63,7 @@ class SedanCarBuilder(Builder):
     def setAirConditioning(self) -> None:
         self._product.add("Air Conditioning")
 
+
 class HatchbackCarBuilder(Builder):
 
     def __init__(self) -> None:
@@ -101,8 +102,9 @@ class Product1():
     def add(self, part: Any) -> None:
         self.parts.append(part)
 
-    def list_parts(self) -> None:
+    def list_parts(self):
         print(f"Product parts: {', '.join(self.parts)}", end="")
+        return self.parts
 
 
 class Director:
