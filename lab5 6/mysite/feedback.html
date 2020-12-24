@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h2>Оставляйте отзывы и пожелания о сайте</h2>
+    <form action="" method="GET">
+        <table>
+            <tr>
+                <td><label for="email">Ваш электронный адрес: </label></td>
+                <td><input type="email" name="email" placeholder="email@example.com" /><br /></td>
+            </tr>
+            <tr>
+                <td><label for="username">Имя: </label></td>
+                <td><input type="text" name="username" placeholder="Имя" /><br /></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Пол: </label></td>
+                <td><input type="radio" name="gender" value="male" checked />Муж.
+                    <input type="radio" name="gender" value="female" />Жен.<br />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="answ">Прислать ответ по почте: </label></td>
+                <td><input type="checkbox" name="answ" value="true" />Да<br /></td>
+            </tr>
+            <tr>
+                <td><label for="select">Тема сообщения: </label></td>
+                <td>
+                    <select name="select">
+                        <option>Грамматическая ошибка</option>
+                        <option>Баг</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="select">Тема сообщения: </label></td>
+                <td>
+                    <select name="select" multiple>
+                        <option>Грамматическая ошибка</option>
+                        <option>Баг</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="message">Сообщение: </label></td>
+            </tr>
+            <tr>
+                <td colspan="2"><textarea name="message" rows="10" cols="47" style="resize: none;"></textarea><br />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><button type="reset"><img width="12" height="12" align="center"
+                            src="images/reset.png"> Очистить</button> <input type="submit" value="Отправить" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
