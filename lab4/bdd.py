@@ -1,4 +1,5 @@
 from pytest_bdd import scenario, given, when, then
+from behavioral import SportNews, FootballObserver
 
 
 @given("I am a sports news user.")
